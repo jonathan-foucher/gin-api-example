@@ -1,15 +1,11 @@
 package main
 
 import (
-	"net/http"
-	"github.com/gin-gonic/gin"
+	"gin-api-example/routers"
 )
 
 func main() {
-	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello, Gin!")
-	})
-
-	r.Run(":3000")
+	router := routers.InitRouter()
+	router.SetTrustedProxies(nil)
+	router.Run(":3000")
 }
