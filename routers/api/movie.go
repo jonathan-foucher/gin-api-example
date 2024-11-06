@@ -36,8 +36,8 @@ func SaveMovie(c *gin.Context) {
 	}
 
 	fmt.Println("Post movie with id", movie.Id)
-	fmt.Println("Post movie with title ", movie.Title)
-	fmt.Println("Post movie with release date ", movie.ReleaseDate)
+	fmt.Println("Post movie with title", movie.Title)
+	fmt.Println("Post movie with release date", movie.ReleaseDate)
 
 	queries.SaveMovie(context.Background(), db.SaveMovieParams{
 		ID: movie.Id,
